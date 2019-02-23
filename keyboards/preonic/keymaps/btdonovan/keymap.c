@@ -103,23 +103,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Num
  * ╔══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╗
- * ║ Esc  │  !   │  @   │  #   │  $   │  %   │  ^   │  &   │ Num  │  kp/ │  kp* │ Bksp ║
+ * ║ Esc  │  !   │  @   │  #   │  $   │  %   │  ^   │  Num │ kp/  │  kp* │      │ Bksp ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║ Tab  │ Home │ PgDn │ PgUp │ End  │ Calc │  (   │  )   │  7   │  8   │  9   │  kp- ║
+ * ║ Tab  │ Home │ PgDn │ PgUp │ End  │ Calc │  (   │  7   │  8   │  9   │  )   │  kp- ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║CtrEsc│ Left │ Down │  Up  │Right │  f   │  [   │  ]   │  4   │  5   │  6   │  kp+ ║
+ * ║CtrEsc│ Left │ Down │  Up  │Right │  f   │  [   │  4   │  5   │  6   │  ]   │  kp+ ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║ Lsft │  a   │  b   │  c   │  d   │  e   │  {   │  }   │  1   │  2   │  3   │RShEnt║
+ * ║ Lsft │  a   │  b   │  c   │  d   │  e   │  {   │  1   │  2   │  3   │  }   │RShEnt║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │      │ GUI  │ Alt  │Lower │LsfEnt│Space │Raise │  0   │  ,   │  .   │  Del ║
+ * ║      │      │ GUI  │ Alt  │Lower │LsfEnt│Space │Raise │  0   │  .   │  ,   │  Del ║
  * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
  */
 [_NUM] = LAYOUT_preonic_grid( \
-  KC_ESC,         KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,        KC_CIRC,  KC_AMPR,  KC_NLCK,  KC_PSLS,  KC_PAST,  KC_BSPC, \
-  KC_TAB,         KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   KC_CALC,        KC_LPRN,  KC_RPRN,  KC_P7,    KC_P8,    KC_P9,    KC_PMNS, \
-  LCTL_T(KC_ESC), KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_F,           KC_LBRC,  KC_RBRC,  KC_P4,    KC_P5,    KC_P6,    KC_PPLS, \
-  KC_LSFT,        KC_A,     KC_B,     KC_C,     KC_D,     KC_E,           KC_LCBR,  KC_RCBR,  KC_P1,    KC_P2,    KC_P3,    RSFT_T(KC_PENT), \
-  KC_NO,          KC_NO,    KC_LGUI,  KC_LALT,  LOWER,    LSFT_T(KC_ENT), KC_SPC,   RAISE,    KC_P0,    KC_COMM,  KC_DOT,   KC_DEL  \
+  KC_ESC,         KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,        KC_CIRC,  KC_NLCK,  KC_PSLS,  KC_PAST,  KC_NO,    KC_BSPC, \
+  KC_TAB,         KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   KC_CALC,        KC_LPRN,  KC_P7,    KC_P8,    KC_P9,    KC_RPRN,  KC_PMNS, \
+  LCTL_T(KC_ESC), KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_F,           KC_LBRC,  KC_P4,    KC_P5,    KC_P6,    KC_RBRC,  KC_PPLS, \
+  KC_LSFT,        KC_A,     KC_B,     KC_C,     KC_D,     KC_E,           KC_LCBR,  KC_P1,    KC_P2,    KC_P3,    KC_RCBR,  RSFT_T(KC_PENT), \
+  KC_NO,          KC_NO,    KC_LGUI,  KC_LALT,  LOWER,    LSFT_T(KC_ENT), KC_SPC,   RAISE,    KC_P0,    KC_DOT,   KC_COMM,  KC_DEL  \
 ),
 
 /* Lower

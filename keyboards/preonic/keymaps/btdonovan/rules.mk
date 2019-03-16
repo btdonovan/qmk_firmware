@@ -1,3 +1,11 @@
 SRC += muse.c
 
+COMMAND_ENABLE = yes
+
 LEADER_ENABLE = yes
+
+NKRO_ENABLE = yes
+
+BOOTMAGIC_ENABLE = yes
+
+CONSOLE_ENABLE = yes

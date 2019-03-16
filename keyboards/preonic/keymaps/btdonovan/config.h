@@ -15,7 +15,7 @@
                                   SONG(COLEMAK_SOUND), \
                                   SONG(DVORAK_SOUND), \
                                   SONG(IMPERIAL_MARCH), \
-                                  SONG(FF_PRELUDE) \
+                                  SONG(COIN_SOUND) \
                                 }
 #endif
 

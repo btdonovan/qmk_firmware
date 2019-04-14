@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,         KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   KC_CALC,        KC_LPRN,  KC_P7,    KC_P8,    KC_P9,    KC_RPRN,  KC_PMNS, \
   LCTL_T(KC_ESC), KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_F,           KC_LBRC,  KC_P4,    KC_P5,    KC_P6,    KC_RBRC,  KC_PPLS, \
   KC_LSFT,        KC_A,     KC_B,     KC_C,     KC_D,     KC_E,           KC_LCBR,  KC_P1,    KC_P2,    KC_P3,    KC_RCBR,  RSFT_T(KC_PENT), \
-  KC_LGUI,        KC_APP,   KC_NO,  KC_LALT,  LOWER,    LSFT_T(KC_ENT), KC_SPC,   RAISE,    KC_P0,    KC_DOT,   KC_COMM,  KC_DEL  \
+  KC_LGUI,        KC_APP,   KC_NO,    KC_LALT,  LOWER,    LSFT_T(KC_ENT), KC_SPC,   RAISE,    KC_P0,    KC_DOT,   KC_COMM,  KC_DEL  \
 ),
 
 /* Game

@@ -22,10 +22,10 @@ enum preonic_layers {
   _COLEMAK,
   _DVORAK,
   _NUM,
-  _GAME,
   _LOWER,
   _RAISE,
-  _ADJUST
+  _ADJUST,
+  _MOUSE
 };
 
 enum preonic_keycodes {
@@ -33,10 +33,11 @@ enum preonic_keycodes {
   COLEMAK,
   DVORAK,
   NUM,
-  GAME,
   LOWER,
   RAISE
 };
+
+#define MOUSE TT(_MOUSE)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -46,19 +47,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
  * ║ Tab  │   Q  │   W  │   E  │   R  │   T  │   Y  │   U  │   I  │   O  │   P  │  \   ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║CtrEsc│   A  │   S  │   D  │   F  │   G  │   H  │   J  │   K  │   L  │   ;  │  "   ║
+ * ║ Ctrl │   A  │   S  │   D  │   F  │   G  │   H  │   J  │   K  │   L  │   ;  │  "   ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
  * ║ LSft │   Z  │   X  │   C  │   V  │   B  │   N  │   M  │   ,  │   .  │   /  │ RSft ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║ GUI  │ App  │      │ Alt  │Lower │LshEnt│Space │Raise │ Left │ Down │  Up  │Right ║
+ * ║ GUI  │ App  │ Alt  │Mouse │Lower │RshEnt│Space │Raise │ Left │ Down │  Up  │Right ║
  * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
  */
-[_QWERTY] = LAYOUT_preonic_grid( \
-  KC_ESC,         KC_1,     KC_2,     KC_3,     KC_4,     KC_5,           KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_BSPC, \
-  KC_TAB,         KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,           KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_BSLASH,  \
-  LCTL_T(KC_ESC), KC_A,     KC_S,     KC_D,     KC_F,     KC_G,           KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT, \
-  KC_LSFT,        KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,           KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,  \
-  KC_LGUI,        KC_APP,   KC_NO,    KC_LALT,  LOWER,    LSFT_T(KC_ENT), KC_SPC,   RAISE,    KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT  \
+[_QWERTY] = LAYOUT_preonic_grid(
+    KC_ESC,         KC_1,   KC_2,    KC_3,  KC_4,  KC_5,   KC_6,           KC_7,  KC_8,    KC_9,    KC_0,    KC_BSPC,
+    KC_TAB,         KC_Q,   KC_W,    KC_E,  KC_R,  KC_T,   KC_Y,           KC_U,  KC_I,    KC_O,    KC_P,    KC_BSLASH,
+    LCTL_T(KC_TAB), KC_A,   KC_S,    KC_D,  KC_F,  KC_G,   KC_H,           KC_J,  KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+    KC_LSFT,        KC_Z,   KC_X,    KC_C,  KC_V,  KC_B,   KC_N,           KC_M,  KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+    KC_LGUI,        KC_APP, KC_LALT, MOUSE, LOWER, KC_SPC, RSFT_T(KC_ENT), RAISE, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Colemak
@@ -67,19 +68,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
  * ║ Tab  │   Q  │   W  │   F  │   P  │   G  │   J  │   L  │   U  │   Y  │   ;  │  \   ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║CtrEsc│   A  │   R  │   S  │   T  │   D  │   H  │   N  │   E  │   I  │   O  │  "   ║
+ * ║ Ctrl │   A  │   R  │   S  │   T  │   D  │   H  │   N  │   E  │   I  │   O  │  "   ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
  * ║ LSft │   Z  │   X  │   C  │   V  │   B  │   K  │   M  │   ,  │   .  │   /  │ RSft ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║ GUI  │ App  │      │ Alt  │Lower │LshEnt│Space │Raise │ Left │ Down │  Up  │Right ║
+ * ║ GUI  │ App  │ Alt  │Mouse │Lower │RshEnt│Space │Raise │ Left │ Down │  Up  │Right ║
  * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
  */
-[_COLEMAK] = LAYOUT_preonic_grid( \
-  KC_ESC,         KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_BSPC, \
-  KC_TAB,         KC_Q,     KC_W,     KC_F,     KC_P,     KC_G,     KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,  KC_BSLASH,  \
-  LCTL_T(KC_ESC), KC_A,     KC_R,     KC_S,     KC_T,     KC_D,     KC_H,     KC_N,     KC_E,     KC_I,     KC_O,     KC_QUOT, \
-  KC_LSFT,        KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_K,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,  \
-  KC_LGUI,        KC_APP,   KC_NO,    KC_LALT,  LOWER,    LSFT_T(KC_ENT), KC_SPC,   RAISE,    KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT  \
+[_COLEMAK] = LAYOUT_preonic_grid(
+    KC_ESC,         KC_1,   KC_2,    KC_3,  KC_4,  KC_5,   KC_6,           KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+    KC_TAB,         KC_Q,   KC_W,    KC_F,  KC_P,  KC_G,   KC_J,           KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSLASH,
+    LCTL_T(KC_TAB), KC_A,   KC_R,    KC_S,  KC_T,  KC_D,   KC_H,           KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
+    KC_LSFT,        KC_Z,   KC_X,    KC_C,  KC_V,  KC_B,   KC_K,           KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+    KC_LGUI,        KC_APP, KC_LALT, MOUSE, LOWER, KC_SPC, RSFT_T(KC_ENT), RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Dvorak
@@ -88,19 +89,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
  * ║ Tab  │   "  │   ,  │   .  │   P  │   Y  │   F  │   G  │   C  │   R  │   L  │  \   ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║CtrEsc│   A  │   O  │   E  │   U  │   I  │   D  │   H  │   T  │   N  │   S  │  /   ║
+ * ║ Ctrl │   A  │   O  │   E  │   U  │   I  │   D  │   H  │   T  │   N  │   S  │  /   ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
  * ║ LSft │   ;  │   Q  │   J  │   K  │   X  │   B  │   M  │   W  │   V  │   Z  │ RSft ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║ GUI  │ App  │      │ Alt  │Lower │LshEnt│Space │Raise │ Left │ Down │  Up  │Right ║
+ * ║ GUI  │ App  │ Alt  │Mouse │Lower │RshEnt│Space │Raise │ Left │ Down │  Up  │Right ║
  * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
  */
-[_DVORAK] = LAYOUT_preonic_grid( \
-  KC_ESC,         KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_BSPC, \
-  KC_TAB,         KC_QUOT,  KC_COMM,  KC_DOT,   KC_P,     KC_Y,     KC_F,     KC_G,     KC_C,     KC_R,     KC_L,     KC_BSLASH,  \
-  LCTL_T(KC_ESC), KC_A,     KC_O,     KC_E,     KC_U,     KC_I,     KC_D,     KC_H,     KC_T,     KC_N,     KC_S,     KC_SLSH, \
-  KC_LSFT,        KC_SCLN,  KC_Q,     KC_J,     KC_K,     KC_X,     KC_B,     KC_M,     KC_W,     KC_V,     KC_Z,     KC_RSFT,  \
-  KC_LGUI,        KC_APP,   KC_NO,    KC_LALT,  LOWER,    LSFT_T(KC_ENT), KC_SPC,   RAISE,    KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT  \
+
+[_DVORAK] = LAYOUT_preonic_grid(
+    KC_ESC,         KC_1,    KC_2,    KC_3,   KC_4,  KC_5,   KC_6,           KC_7,  KC_8,    KC_9,    KC_0,  KC_BSPC,
+    KC_TAB,         KC_QUOT, KC_COMM, KC_DOT, KC_P,  KC_Y,   KC_F,           KC_G,  KC_C,    KC_R,    KC_L,  KC_BSLASH,
+    LCTL_T(KC_TAB), KC_A,    KC_O,    KC_E,   KC_U,  KC_I,   KC_D,           KC_H,  KC_T,    KC_N,    KC_S,  KC_SLSH,
+    KC_LSFT,        KC_SCLN, KC_Q,    KC_J,   KC_K,  KC_X,   KC_B,           KC_M,  KC_W,    KC_V,    KC_Z,  KC_RSFT,
+    KC_LGUI,        KC_APP,  KC_LALT, MOUSE,  LOWER, KC_SPC, RSFT_T(KC_ENT), RAISE, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
 ),
 
 /* Num
@@ -113,99 +115,99 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
  * ║ Lsft │  a   │  b   │  c   │  d   │  e   │  {   │  1   │  2   │  3   │  }   │RShEnt║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║ GUI  │ App  │      │ Alt  │Lower │LsfEnt│Space │Raise │  0   │  .   │  ,   │  Del ║
+ * ║ GUI  │ App  │      │ Alt  │Lower │RsfEnt│Space │Raise │  0   │  .   │  ,   │  Del ║
  * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
  */
-[_NUM] = LAYOUT_preonic_grid( \
-  KC_ESC,         KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,        KC_CIRC,  KC_NLCK,  KC_PSLS,  KC_PAST,  KC_NO,    KC_BSPC, \
-  KC_TAB,         KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   KC_CALC,        KC_LPRN,  KC_P7,    KC_P8,    KC_P9,    KC_RPRN,  KC_PMNS, \
-  LCTL_T(KC_ESC), KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_F,           KC_LBRC,  KC_P4,    KC_P5,    KC_P6,    KC_RBRC,  KC_PPLS, \
-  KC_LSFT,        KC_A,     KC_B,     KC_C,     KC_D,     KC_E,           KC_LCBR,  KC_P1,    KC_P2,    KC_P3,    KC_RCBR,  RSFT_T(KC_PENT), \
-  KC_LGUI,        KC_APP,   KC_NO,    KC_LALT,  LOWER,    LSFT_T(KC_ENT), KC_SPC,   RAISE,    KC_P0,    KC_DOT,   KC_COMM,  KC_DEL  \
-),
-
-/* Game
- * ╔══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╗
- * ║ Esc  │   1  │   2  │   3  │   4  │   5  │   6  │   7  │   8  │   9  │   0  │ Bksp ║
- * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║ Tab  │   Q  │   W  │   E  │   R  │   T  │   Y  │   U  │   I  │   O  │   P  │  \   ║
- * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║CtrEsc│   A  │   S  │   D  │   F  │   G  │   H  │   J  │   K  │   L  │   ;  │  "   ║
- * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║ LSft │   Z  │   X  │   C  │   V  │   B  │   N  │   M  │   ,  │   .  │   /  │RShEnt║
- * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │      │      │ Alt  │Lower │Space │RshEnt│Raise │ Left │ Down │  Up  │Right ║
- * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
- */
-[_GAME] = LAYOUT_preonic_grid( \
-  KC_ESC,         KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,             KC_7,     KC_8,     KC_9,     KC_0,     KC_BSPC, \
-  KC_TAB,         KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,             KC_U,     KC_I,     KC_O,     KC_P,     KC_BSLASH,  \
-  LCTL_T(KC_ESC), KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,             KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT, \
-  KC_LSFT,        KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,             KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,  \
-  KC_NO,          KC_NO,    KC_NO,    KC_LALT,  LOWER,    KC_SPC,   RSFT_T(KC_ENT),   RAISE,    KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT  \
+[_NUM] = LAYOUT_preonic_grid(
+  KC_ESC,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_NLCK, KC_PSLS, KC_PAST, KC_NO,   KC_BSPC,
+  KC_TAB,  KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_CALC, KC_LPRN, KC_P7,   KC_P8,   KC_P9,   KC_RPRN, KC_PMNS,
+  KC_LCTL, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_F,    KC_LBRC, KC_P4,   KC_P5,   KC_P6,   KC_RBRC, KC_PPLS,
+  KC_LSFT, KC_A,    KC_B,    KC_C,    KC_D,    KC_E,    KC_LCBR, KC_P1,   KC_P2,   KC_P3,   KC_RCBR, RSFT_T(KC_PENT),
+  KC_LGUI, KC_APP,  KC_NO,   KC_LALT, LOWER,   KC_SPC,  RSFT_T(KC_ENT),   RAISE,   KC_P0,   KC_DOT,  KC_COMM, KC_DEL
 ),
 
 /* Lower
  * ╔══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╗
  * ║   ~  │   !  │   @  │   #  │   $  │   %  │   ^  │   &  │   *  │   (  │   )  │ Del  ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │  F1  │  F2  │  F3  │  F4  │      │   +  │   -  │   =  │   [  │   ]  │  |   ║
+ * ║      │  F1  │  F2  │  F3  │  F4  │      │  _   │  -   │  +   │  =   │  (   │  )   ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │  F5  │  F6  │  F7  │  F8  │      │ Left │ Down │  Up  │Right │   :  │  "   ║
+ * ║      │  F5  │  F6  │  F7  │  F8  │Insert│ Left │ Down │  Up  │Right │  [   │  ]   ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │  F9  │  F10 │  F11 │  F12 │      │      │   _  │   <  │  >   │  ?   │      ║
+ * ║      │  F9  │  F10 │  F11 │  F12 │ Del  │ Home │ PgDn │ PgUp │ End  │  {   │  }   ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │      │      │      │      │      │ Bksp │      │ Next │ Vol- │ Vol+ │ Play ║
+ * ║      │      │      │      │      │ Bksp │ Tab  │      │ PScr │Pause │  <   │  >   ║
  * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
  */
-[_LOWER] = LAYOUT_preonic_grid( \
-  KC_TILD,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,  KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  KC_DEL, \
-  _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    _______,  KC_PLUS,  KC_MINS,  KC_EQL,   KC_LBRC,  KC_RBRC,  KC_PIPE,  \
-  _______,  KC_F5,    KC_F6,    KC_F7,    KC_F8,    _______,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_COLN,  KC_DQT, \
-  _______,  KC_F9,    KC_F10,   KC_F11,   KC_F12,   _______,  _______,  KC_UNDS,  KC_LT,    KC_GT,    KC_QUES,  _______, \
-  _______,  _______,  _______,  _______,  _______,  _______,  KC_BSPC,  _______,  KC_MNXT,  KC_VOLD,  KC_VOLU,  KC_MPLY  \
+[_LOWER] = LAYOUT_preonic_grid(
+    KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN,  KC_RPRN, KC_DEL,
+    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   _______, KC_UNDS, KC_MINS, KC_PLUS, KC_EQL,   KC_LPRN, KC_RPRN,
+    _______, KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_INS,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,  KC_LBRC, KC_RBRC,
+    _______, KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,  KC_HOME, KC_PGDN, KC_PGUP, KC_END,   KC_LCBR, KC_RCBR,
+    _______, _______, _______, _______, _______, KC_BSPC, KC_TAB,  _______, KC_PSCR, KC_PAUSE, KC_LT,   KC_GT
 ),
 
 /* Raise
  * ╔══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╗
- * ║   `  │      │      │      │      │      │      │      │      │   (  │   )  │ Del  ║
+ * ║   `  │      │      │      │      │      │      │      │      │      │      │ Bksp ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │   !  │   @  │   #  │   $  │   %  │   ^  │   &  │   *  │   {  │   }  │ PScr ║
+ * ║      │  !   │  @   │  #   │  $   │  %   │  ^   │  &   │  *   │  (   │  )   │ Del  ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │   1  │   2  │   3  │   4  │   5  │   6  │   7  │   8  │   9  │   0  │Pause ║
+ * ║      │  1   │  2   │  3   │  4   │  5   │  6   │  7   │  8   │  9   │  0   │      ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │      │      │      │      │      │      │      │  ,   │  .   │      │      ║
+ * ║      │ Undo │ Cut  │ Copy │Paste │ Del  │ Ins  │      │      │      │      │      ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │      │      │      │      │      │      │      │ Home │ PgDn │ PgUp │ End  ║
+ * ║      │      │      │      │      │ Bksp │ Tab  │      │ Home │ PgDn │ PgUp │ End  ║
  * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
  */
-[_RAISE] = LAYOUT_preonic_grid( \
-  KC_GRV,   _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_LPRN,  KC_RPRN,  KC_DEL, \
-  _______,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,  KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LCBR,  KC_RCBR,  KC_PSCR,  \
-  _______,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_PAUSE, \
-  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_COMM,  KC_DOT,   _______,  _______, \
-  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END \
+[_RAISE] = LAYOUT_preonic_grid(
+    KC_GRV,  _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, KC_BSPC,
+    _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,   KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL,
+    _______, KC_1,    KC_2,    KC_3,    KC_4,     KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
+    _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, KC_DEL,  KC_INS,  _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______,  KC_BSPC, KC_TAB,  _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 ),
 
 /* Adjust (Lower + Raise)
  * ╔══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╗
  * ║  F1  │  F2  │  F3  │  F4  │  F5  │  F6  │  F7  │  F8  │  F9  │  F10 │  F11 │  F12 ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │ Reset│ Debug│ NKRO │      │      │      │      │      │      │      │  Del ║
+ * ║      │ Reset│ Debug│ NKRO │ClkTg │ClkRst│ClkUp │ClkDn │      │      │NoGui │  Del ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║CapsLk│      │MuScl │Aud on│AudOff│AGnorm│AGswap│Qwerty│Colemk│Dvorak│      │      ║
+ * ║CapsLk│      │MuScl │Aud on│AudOff│AGnorm│AGswap│Qwerty│Colemk│Dvorak│YesGui│      ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │Voice-│Voice+│Mus on│MusOff│MidiOn│MidOff│ Num  │ Game │      │      │      ║
+ * ║      │Voice-│Voice+│Mus on│MusOff│MidiOn│MidOff│ Num  │      │      │      │      ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
  * ║      │      │      │      │      │      │      │      │      │      │      │      ║
  * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
  */
-[_ADJUST] = LAYOUT_preonic_grid( \
-  KC_F1,    KC_F2,    KC_F3,    KC_F4,              KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,  \
-  _______,  RESET,    DEBUG,    MAGIC_TOGGLE_NKRO,  _______,  _______,  _______,  TERM_ON,  TERM_OFF, _______,  _______,  KC_DEL,  \
-  KC_CAPS,  _______,  MU_MOD,   AU_ON,              AU_OFF,   AG_NORM,  AG_SWAP,  QWERTY,   COLEMAK,  DVORAK,   _______,  _______, \
-  _______,  MUV_DE,   MUV_IN,   MU_ON,              MU_OFF,   MI_ON,    MI_OFF,   NUM,      GAME,     _______,  _______,  _______, \
-  _______,  _______,  _______,  _______,            _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______  \
+[_ADJUST] = LAYOUT_preonic_grid(
+    KC_F1,   KC_F2,   KC_F3,   KC_F4,             KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,         KC_F12,
+    _______, RESET,   DEBUG,   MAGIC_TOGGLE_NKRO, CK_TOGG, CK_RST,  CK_UP,   CK_DOWN, _______, _______, MAGIC_NO_GUI,   KC_DEL,
+    KC_CAPS, _______, MU_MOD,  AU_ON,             AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK, DVORAK,  MAGIC_UNNO_GUI, _______,
+    _______, MUV_DE,  MUV_IN,  MU_ON,             MU_OFF,  MI_ON,   MI_OFF,  NUM,     _______, _______, _______,        _______,
+    _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______, _______,        _______
+),
+
+/* Mouse
+ * ╔══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╤══════╗
+ * ║      │      │      │      │      │      │      │      │      │      │      │      ║
+ * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
+ * ║      │WhLft │ LBtn │ MsUp │ RBtn │ WhUp │WhLft │ LBtn │ MsUp │ RBtn │ WhUp │      ║
+ * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
+ * ║      │WhRght│ MsLft│ MBtn │MsRght│ WhDn │WhRght│ MsLft│ MBtn │MsRght│ WhDn │      ║
+ * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
+ * ║      │      │ Btn4 │ MsDn │ Btn5 │      │      │ Btn4 │ MsDn │ Btn5 │      │      ║
+ * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
+ * ║      │      │      │      │      │ LBtn │ RBtn │      │      │      │      │      ║
+ * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
+ */
+[_MOUSE] = LAYOUT_preonic_grid(
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, KC_WH_L, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U, KC_WH_L, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U, _______,
+    _______, KC_WH_R, KC_MS_L, KC_BTN3, KC_MS_R, KC_WH_D, KC_WH_R, KC_MS_L, KC_BTN3, KC_MS_R, KC_WH_D, _______,
+    _______, _______, KC_BTN4, KC_MS_D, KC_BTN5, _______, _______, KC_BTN4, KC_MS_D, KC_BTN5, _______, _______,
+    _______, _______, _______, _______, _______, KC_BTN1, KC_BTN2, _______, _______, _______, _______, _______
 )
 
 };
@@ -233,12 +235,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case NUM:
           if (record->event.pressed) {
             set_single_persistent_default_layer(_NUM);
-          }
-          return false;
-          break;
-        case GAME:
-          if (record->event.pressed) {
-            set_single_persistent_default_layer(_GAME);
           }
           return false;
           break;

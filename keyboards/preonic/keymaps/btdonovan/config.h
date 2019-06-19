@@ -6,7 +6,8 @@
 
     #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
                                   SONG(COLEMAK_SOUND), \
-                                  SONG(DVORAK_SOUND) \
+                                  SONG(DVORAK_SOUND), \
+                                  SONG(ONE_UP_SOUND) \
                                 }
 #endif
 
@@ -38,3 +39,5 @@
 
 #define MOUSEKEY_INTERVAL 16
 #define MOUSEKEY_MAX_SPEED 5
+
+#define TAPPING_TOGGLE 3

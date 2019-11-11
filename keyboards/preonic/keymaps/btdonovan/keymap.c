@@ -114,16 +114,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
  * ║      │  a   │  b   │  c   │  d   │  e   │  [   │  1   │  2   │  3   │RShEnt|  ]   ║
  * ╟──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────╢
- * ║      │      │      │      |      │  _   │Space │  0   │  .   │  kp* │ kp/  │  \   ║
+ * ║      │      │      │      |      │ Bksp   │Space │  0   │  .   │  kp* │ kp/  │  \   ║
  * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
- * Todo: Change KC_DEL to numpad equivelent
  */
 [_CODE] = LAYOUT_preonic_grid(
-  _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_SLASH,  KC_BSLASH,       _______,
-  _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NLCK, KC_LCBR, KC_P7,   KC_P8,   KC_P9,     KC_PMNS,         KC_RCBR,
-  _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_F,    KC_LPRN, KC_P4,   KC_P5,   KC_P6,     KC_PPLS,         KC_RPRN,
-  _______, KC_A,    KC_B,    KC_C,    KC_D,    KC_E,    KC_LBRC, KC_P1,   KC_P2,   KC_P3,     RSFT_T(KC_PENT), KC_RBRC,
-  _______, _______, _______, _______, _______, KC_UNDS, KC_SPC,  KC_P0,   KC_PDOT, KC_PAST,   KC_PSLS,         KC_BSLASH
+    _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_SLASH,  KC_BSLASH,       _______,
+    _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NLCK, KC_LCBR, KC_P7,   KC_P8,   KC_P9,     KC_PMNS,         KC_RCBR,
+    _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_F,    KC_LPRN, KC_P4,   KC_P5,   KC_P6,     KC_PPLS,         KC_RPRN,
+    _______, KC_A,    KC_B,    KC_C,    KC_D,    KC_E,    KC_LBRC, KC_P1,   KC_P2,   KC_P3,     RSFT_T(KC_PENT), KC_RBRC,
+    _______, _______, _______, _______, _______, KC_BSPC, KC_SPC,  KC_P0,   KC_PDOT, KC_PAST,   KC_PSLS,         KC_BSLASH
 ),
 
 /* Lower
@@ -162,7 +161,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT_preonic_grid(
     KC_GRV,  _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______,
-    _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,   KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL,
+    _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,   KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_MINS, KC_PLUS, KC_DEL,
     _______, KC_1,    KC_2,    KC_3,    KC_4,     KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
     _______, KC_LT,   KC_LBRC, KC_LCBR, KC_LPRN,  KC_UNDS, KC_EQL,  KC_RPRN, KC_RCBR, KC_RBRC, KC_GT,   _______,
     _______, _______, _______, _______, _______,  KC_BSPC, KC_TAB,  _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END

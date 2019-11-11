@@ -1,2 +1,1 @@
-# The Default Planck Layout
-
+# Donovan's planck layout. Matches Donovan's Preonic layout.

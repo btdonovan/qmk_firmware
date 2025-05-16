@@ -164,7 +164,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ╚══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╧══════╝
  */
 [_ADJUST] = LAYOUT_planck_grid(
-    MAGIC_TOGGLE_NKRO, RESET,   DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______,
+    QK_MAGIC_TOGGLE_NKRO, RESET,   DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______,
     KC_CAPS,           _______, MU_NEXT, AU_ON,   AU_OFF,  _______, _______, QWERTY,  COLEMAK, DVORAK,  _______, _______,
     _______,           AU_PREV, AU_NEXT, MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, KC_ACL0, KC_ACL1, KC_ACL2,
     _______,           _______, _______, _______, _______, _______, _______, _______, KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY

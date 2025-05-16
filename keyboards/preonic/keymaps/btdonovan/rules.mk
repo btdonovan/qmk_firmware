@@ -1,0 +1,7 @@
+SRC += muse.c
+
+MOUSEKEY_ENABLE = yes
+
+COMMAND_ENABLE = yes
+
+NKRO_ENABLE = yes

@@ -14,8 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include QMK_KEYBOARD_H;
-#include "muse.h";
+#include QMK_KEYBOARD_H
+#include "muse.h"
 
 enum preonic_layers {
   _QWERTY,
@@ -27,12 +27,12 @@ enum preonic_layers {
   _CODE
 };
 
-#define LOWER MO(_LOWER);
-#define RAISE MO(_RAISE);
-#define QWERTY PDF(_QWERTY);
-#define COLEMAK PDF(_COLEMAK);
-#define DVORAK PDF(_DVORAK);
-#define CODE TT(_CODE);
+#define LOWER MO(_LOWER)
+#define RAISE MO(_RAISE)
+#define QWERTY PDF(_QWERTY)
+#define COLEMAK PDF(_COLEMAK)
+#define DVORAK PDF(_DVORAK)
+#define CODE TT(_CODE)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
